@@ -15,7 +15,7 @@ class TestLoginSection:
         driver.find_element(By.XPATH, login_page_password_input).send_keys(login_password)
         driver.find_element(By.XPATH, login_page_submit_button).click()
         WebDriverWait(driver, 5).until(expected_conditions.element_to_be_clickable((By.XPATH, order_button)))
-        assert check in driver.find_element(By.XPATH, order_button).text
+        assert check in order_button
 
 
     # Вход по кнопке "Войти в аккаунт" на главном сайте .site
@@ -27,8 +27,7 @@ class TestLoginSection:
         driver.find_element(By.XPATH, login_page_password_input).send_keys(login_password)
         driver.find_element(By.XPATH, login_page_submit_button).click()
         WebDriverWait(driver, 5).until(expected_conditions.element_to_be_clickable((By.XPATH, order_button)))
-        # Проверка того, что элемент на следующей странице прогрузился
-        assert check in driver.find_element(By.XPATH, order_button).text
+        assert check in order_button
 
 
     # Авторизация через страницу регистрации
@@ -40,7 +39,7 @@ class TestLoginSection:
         driver.find_element(By.XPATH, login_page_password_input).send_keys(login_password)
         driver.find_element(By.XPATH, login_page_submit_button).click()
         WebDriverWait(driver, 5).until(expected_conditions.element_to_be_clickable((By.XPATH, order_button)))
-        assert check in driver.find_element(By.XPATH, order_button).text
+        assert check in order_button
 
 
     # Авторизация через страницу восстановления пароля
@@ -52,4 +51,4 @@ class TestLoginSection:
         driver.find_element(By.XPATH, login_page_password_input).send_keys(login_password)
         driver.find_element(By.XPATH, login_page_submit_button).click()
         WebDriverWait(driver, 5).until(expected_conditions.element_to_be_clickable((By.XPATH, order_button)))
-        assert check in driver.find_element(By.XPATH, order_button).text
+        assert check in order_button
