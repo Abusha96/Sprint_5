@@ -11,15 +11,16 @@ class TestTabs:
         driver.find_element(By.XPATH, breads).click()
         assert driver.find_element(By.XPATH, element_is_active).text == driver.find_element(By.XPATH, breads).text
 
+
     # Переход к разделу "Соусы"
     def test_sauce(self, driver):
         driver.get(site)
         driver.find_element(By.XPATH, sauce).click()
         assert driver.find_element(By.XPATH, element_is_active).text == driver.find_element(By.XPATH, sauce).text
 
+
     # Переход к разделу "Начинки"
     def test_topping(self, driver):
         driver.get(site)
         driver.find_element(By.XPATH, topping).click()
         assert driver.find_element(By.XPATH, element_is_active).text == driver.find_element(By.XPATH, topping).text
-
