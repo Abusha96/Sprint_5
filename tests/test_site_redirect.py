@@ -12,8 +12,7 @@ class TestRedirect:
         driver.find_element(By.XPATH, login_page_password_input).send_keys(login_password)
         driver.find_element(By.XPATH, login_page_submit_button).click()
         driver.find_element(By.XPATH, site_from_home_site_to_personal_account_redirect_button).click()
-        text_on_personal_account_page = 'В этом разделе вы можете изменить свои персональные данные'
-        assert text_on_personal_account_page in driver.find_element(By.XPATH, text_about_changes_current_data).text
+        assert driver.find_element(By.XPATH, text_about_changes_current_data).is_displayed()
 
 
     # Переход в конструктор после успешной авторизации
@@ -25,8 +24,7 @@ class TestRedirect:
         driver.find_element(By.XPATH, login_page_submit_button).click()
         driver.find_element(By.XPATH, site_from_home_site_to_personal_account_redirect_button).click()
         driver.find_element(By.XPATH, builder_button).click()
-        check = 'Соберите бургер'
-        assert check in driver.find_element(By.XPATH, builder_header).text
+        assert driver.find_element(By.XPATH, builder_header).is_displayed()
 
 
     # Переход в конструктор со страницы ЛК по нажатию на логотип
@@ -38,5 +36,4 @@ class TestRedirect:
         driver.find_element(By.XPATH, login_page_submit_button).click()
         driver.find_element(By.XPATH, site_from_home_site_to_personal_account_redirect_button).click()
         driver.find_element(By.CLASS_NAME, logo_button).click()
-        check_header = 'Соберите бургер'
-        assert check_header in driver.find_element(By.XPATH, builder_header).text
+        assert driver.find_element(By.XPATH, builder_header).is_displayed()

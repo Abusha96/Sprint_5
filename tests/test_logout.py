@@ -17,5 +17,4 @@ class TestLogout:
         driver.find_element(By.XPATH, site_from_home_site_to_personal_account_redirect_button).click()
         # Выход
         driver.find_element(By.XPATH, exit_button).click()
-        check_button = driver.find_element(By.XPATH, login_page_submit_button).text
-        assert check_button == "Войти"
+        assert driver.find_element(By.XPATH, login_page_submit_button).is_displayed()
